@@ -1,10 +1,12 @@
 package com.example.cityhallbuildingnavigator
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         var selectedValue: String? = null
 
         searchView = findViewById(R.id.searchView1)
+
+
+
         listView = findViewById(R.id.listView1)
 
         listView.visibility = View.INVISIBLE
@@ -67,17 +72,17 @@ class MainActivity : AppCompatActivity() {
 
             //Second Floor
 
-            "City Civil Registrar's Office",
-            "City Environment and Natural Resources",
-            "City Agriculture's Office",
-            "City Architect's Office",
-            "City Community Affairs Office",
-            "City Cooperatives Office",
-            "City Engineering Office",
-            "City Nutrition Office",
-            "City Social Welfare and Development Office",
-            "City Tourism and Cultural Affairs",
-            "City Veterinary Office",
+            "CITY CIVIL REGISTRAR'S OFFICE",
+            "CITY ENVIRONMENT AND NATURAL RESOURCES",
+            "CITY AGRICULTURE'S OFFICE",
+            "CITY ARCHITECT'S OFFICE",
+            "CITY COMMUNITY AFFAIRS OFFICE",
+            "CITY COOPERATIVES OFFICE",
+            "CITY ENGINEERING OFFICE",
+            "CITY NUTRITION OFFICE",
+            "CITY SOCIAL WELFARE AND DEVELOPMENT OFFICE",
+            "CITY TOURISM AND CULTURAL AFFAIRS",
+            "CITY VETERINARY OFFICE",
             "SECOND FLOOR MENS ROOM LEFT",
             "SECOND FLOOR MENS ROOM RIGHT",
             "SECOND FLOOR WOMEN ROOM LEFT",
@@ -217,17 +222,17 @@ class MainActivity : AppCompatActivity() {
 //          Second Floor Offices //
 
 
-                "City Civil Registrar's Office" -> Intent(this, SecondFloorCivilRegistrar::class.java)
-                "City Environment and Natural Resources" -> Intent(this, SecondFloorCityEnvironment::class.java)
-                "City Agriculture's Office" -> Intent(this, SecondFloorCityArgiculture::class.java)
-                "City Architect's Office" -> Intent(this, SecondFloorCityArchitect::class.java)
+                "CITY CIVIL REGISTRAR'S OFFICE" -> Intent(this, SecondFloorCivilRegistrar::class.java)
+                "CITY ENVIRONMENT AND NATURAL RESOURCES"-> Intent(this, SecondFloorCityEnvironment::class.java)
+                "CITY AGRICULTURE'S OFFICE" -> Intent(this, SecondFloorCityArgiculture::class.java)
+                "CITY ARCHITECT'S OFFICE" -> Intent(this, SecondFloorCityArchitect::class.java)
                 "City Community Affairs Office" -> Intent(this, SecondFloorCommunityAffairs::class.java)
-                "City Cooperatives Office" -> Intent(this, SecondFloorCooperative::class.java)
-                "City Engineering Office" -> Intent(this, SecondFloorEngineering::class.java)
-                "City Nutrition Office" -> Intent(this, SecondFloorNutrition::class.java)
-                "City Social Welfare and Development Office" -> Intent(this, SecondFloorSocialWelfare::class.java)
-                "City Tourism and Cultural Affairs" -> Intent(this, SecondFloorTourism::class.java)
-                "City Veterinary Office" -> Intent(this,SecondFloorVeterinary::class.java)
+                "CITY COOPERATIVES OFFICE" -> Intent(this, SecondFloorCooperative::class.java)
+                "CITY ENGINEERING OFFICE"-> Intent(this, SecondFloorEngineering::class.java)
+                "CITY NUTRITION OFFICE"-> Intent(this, SecondFloorNutrition::class.java)
+                "CITY SOCIAL WELFARE AND DEVELOPMENT OFFICE" -> Intent(this, SecondFloorSocialWelfare::class.java)
+                "CITY TOURISM AND CULTURAL AFFAIRS" -> Intent(this, SecondFloorTourism::class.java)
+                "CITY VETERINARY OFFICE"-> Intent(this,SecondFloorVeterinary::class.java)
                 "SECOND FLOOR MENS ROOM LEFT" -> Intent(this, SecondFloorMenRoomLeft::class.java)
                 "SECOND FLOOR MENS ROOM RIGHT" -> Intent(this, SecondFloorMenRoomRight::class.java)
                 "SECOND FLOOR WOMEN ROOM LEFT" -> Intent(this, SecondFloorCRLeft::class.java)

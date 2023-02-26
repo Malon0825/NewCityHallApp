@@ -7,6 +7,10 @@ android {
     namespace 'com.example.cityhallbuildingnavigator'
     compileSdk 33
 
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+
     defaultConfig {
         applicationId "com.example.cityhallbuildingnavigator"
         minSdk 23
