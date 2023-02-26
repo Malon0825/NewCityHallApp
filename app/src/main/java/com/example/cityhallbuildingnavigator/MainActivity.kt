@@ -41,28 +41,29 @@ class MainActivity : AppCompatActivity() {
             "PMO STOCK ROOM",
             "CITY DISASTER AND RISK MANAGEMENT",
             "PARKING AREA",
-            "SECURITY ROOM LEFT",
-            "SECURITY ROOM RIGHT/COOP OFFICE",
+            "SECURITY ROOM LEFT/COOP OFFICE",
+            "SECURITY ROOM RIGHT",
             "GSIS",
             "PUMP ROOM",
             "CANTEEN",
-            "ELEVATOR",
+            "BASEMENT ELEVATOR",
 
             //Ground Floor
 
             "CITY ASSESOR'S OFFICE",
             "CITY POPULATION OFFICE",
             "CITY TREASURERS OFFICE",
-            "GROUND COMFORT ROOM LEFT",
-            "GROUND COMFORT ROOM RIGHT",
             "CONSTRUCTION PERMIT",
             "ECONOMIC ENTERPRISES",
             "GROUND FLOOR ENTRANCE",
             "GROUND FLOOR EXIT",
             "FRANCHISING UNIT",
             "GENERAL SERVICES",
-            "GROUND FLOOR ELEVATOR",
             "CSU/INFORMATION DESK",
+            "GROUND FLOOR MENS ROOM LEFT",
+            "GROUND FLOOR MENS ROOM RIGHT",
+            "GROUND FLOOR WOMEN ROOM LEFT",
+            "GROUND FLOOR WOMEN ROOM RIGHT",
 
             //Second Floor
 
@@ -77,16 +78,19 @@ class MainActivity : AppCompatActivity() {
             "City Social Welfare and Development Office",
             "City Tourism and Cultural Affairs",
             "City Veterinary Office",
-            "Second Floor COMFORT ROOM LEFT",
-            "Second Floor COMFORT ROOM RIGHT",
+            "SECOND FLOOR MENS ROOM LEFT",
+            "SECOND FLOOR MENS ROOM RIGHT",
+            "SECOND FLOOR WOMEN ROOM LEFT",
+            "SECOND FLOOR WOMEN ROOM RIGHT",
             "Office of the City Social Welfare and Development Officer",
+            "SECOND FLOOR ELEVATOR",
 
             //Third Floor
 
             "ABC HALL",
             "ACCOUNTING OFFICE",
             "CITY AUCTIO OFFICE",
-            "BID & AWARD COMMITTEE",
+            "BID AND AWARD COMMITTEE",
             "BUDGET HALL",
             "CITY LIBRARY",
             "MAYORS OFFICE",
@@ -101,6 +105,7 @@ class MainActivity : AppCompatActivity() {
             "THIRD FLOOR WOMEN ROOM RIGHT",
             "MIS ROOM-NEGOSYO CENTER",
             "OFFICE OF THE CITY ADMINISTRATION OFFICE",
+            "THIRD FLOOR ELEVATOR",
 
             //Fourth Floor
 
@@ -125,13 +130,14 @@ class MainActivity : AppCompatActivity() {
             "HON CLARISSE MAE T. SORONGON",
             "FOURTH FLOOR MENS ROOM LEFT",
             "FOURTH FLOOR MENS ROOM RIGHT",
-            "FOURTH FLOOR WOMENS ROOM LEFT",
-            "FOURTH FLOOR WOMENS ROOM RIGHT",
+            "FOURTH FLOOR WOMEN ROOM LEFT",
+            "FOURTH FLOOR WOMEN ROOM RIGHT",
             "MULTI-ROOM",
             "ONE-STOP SHOP FOR OFWPRAYER ROOM",
             "SUPPLIES ROOM",
             "VICE MAYORS OFFICE",
             "VICE MAYORS SECRETARY OFFICE",
+            "FOURTH FLOOR ELEVATOR",
 
         )
 
@@ -181,20 +187,25 @@ class MainActivity : AppCompatActivity() {
                 "PMO STOCK ROOM" -> Intent(this, GroundPMO::class.java)
                 "CITY DISASTER AND RISK MANAGEMENT" -> Intent(this, GroundCityDisaster::class.java)
                 "PARKING AREA" -> Intent(this, GroundParkingArea::class.java)
-                "SECURITY ROOM LEFT" -> Intent(this, GroundSecurityRoom::class.java)
-                "SECURITY ROOM RIGHT/COOP OFFICE" -> Intent(this, GroundSecurityCoop::class.java)
+                "SECURITY ROOM LEFT/COOP OFFICE" -> Intent(this, GroundSecurityRoom::class.java)
+                "SECURITY ROOM RIGHT" -> Intent(this, GroundSecurityCoop::class.java)
                 "GSIS" -> Intent(this, GroundGSIS::class.java)
                 "PUMP ROOM" -> Intent(this, GroundPumpRoom::class.java)
                 "CANTEEN" -> Intent(this, GroundCanteen::class.java)
 
+                "BASEMENT ELEVATOR" -> Intent(this, GroundFloorElevator::class.java)
+
 
 //          First Floor Offices //
+
 
                 "CITY ASSESOR'S OFFICE" -> Intent(this, FirstFloorCityAssesor::class.java)
                 "CITY POPULATION OFFICE" -> Intent(this, FirstFloorCityPopulation::class.java)
                 "CITY TREASURERS OFFICE" -> Intent(this, FirstFloorCityTreasurers::class.java)
-                "GROUND COMFORT ROOM LEFT" -> Intent(this, FirstFloorCRLeft::class.java)
-                "GROUND COMFORT ROOM RIGHT" -> Intent(this, FirstFloorCRRight::class.java)
+                "GROUND FLOOR MENS ROOM LEFT" -> Intent(this, FirstFloorMenRoomLeft::class.java)
+                "GROUND FLOOR MENS ROOM RIGHT" -> Intent(this, FirstFloorMenRoomRight::class.java)
+                "GROUND FLOOR WOMEN ROOM LEFT" -> Intent(this, FirstFloorCRLeft::class.java)
+                "GROUND FLOOR WOMEN ROOM RIGHT" -> Intent(this, FirstFloorCRRight::class.java)
                 "CONSTRUCTION PERMIT" -> Intent(this, FirstFloorConstructionPermit::class.java)
                 "ECONOMIC ENTERPRISES" -> Intent(this, FirstFloorEconomicEnterprises::class.java)
                 "GROUND FLOOR ENTRANCE" -> Intent(this, FirstFloorEntrance::class.java)
@@ -204,6 +215,7 @@ class MainActivity : AppCompatActivity() {
                 "CSU/INFORMATION DESK" -> Intent(this, FirstFloorCSUInformationDesk::class.java)
 
 //          Second Floor Offices //
+
 
                 "City Civil Registrar's Office" -> Intent(this, SecondFloorCivilRegistrar::class.java)
                 "City Environment and Natural Resources" -> Intent(this, SecondFloorCityEnvironment::class.java)
@@ -216,9 +228,13 @@ class MainActivity : AppCompatActivity() {
                 "City Social Welfare and Development Office" -> Intent(this, SecondFloorSocialWelfare::class.java)
                 "City Tourism and Cultural Affairs" -> Intent(this, SecondFloorTourism::class.java)
                 "City Veterinary Office" -> Intent(this,SecondFloorVeterinary::class.java)
-                "Second Floor COMFORT ROOM LEFT" -> Intent(this, SecondFloorCRLeft::class.java)
-                "Second Floor COMFORT ROOM RIGHT" -> Intent(this, SecondFloorCRRight::class.java)
+                "SECOND FLOOR MENS ROOM LEFT" -> Intent(this, SecondFloorMenRoomLeft::class.java)
+                "SECOND FLOOR MENS ROOM RIGHT" -> Intent(this, SecondFloorMenRoomRight::class.java)
+                "SECOND FLOOR WOMEN ROOM LEFT" -> Intent(this, SecondFloorCRLeft::class.java)
+                "SECOND FLOOR WOMEN ROOM RIGHT" -> Intent(this, SecondFloorCRRight::class.java)
                 "Office of the City Social Welfare and Development Officer" -> Intent(this,SecondFloorOfficeCSWD::class.java)
+
+                "SECOND FLOOR ELEVATOR" -> Intent(this, SecondFloorElevator::class.java)
 
 //          Third Floor Offices //
 
@@ -240,6 +256,8 @@ class MainActivity : AppCompatActivity() {
                 "THIRD FLOOR WOMEN ROOM LEFT" -> Intent(this, ThirdFloorWomensRoomLeft::class.java)
                 "MIS ROOM-NEGOSYO CENTER" -> Intent(this, ThirdFloorNegosyo::class.java)
                 "OFFICE OF THE CITY ADMINISTRATION OFFICE" -> Intent(this, ThirdFloorCityAdministration::class.java)
+
+                "THIRD FLOOR ELEVATOR" -> Intent(this, ThirdFloorElevator::class.java)
 
 //          Fourth Floor Offices //
 
@@ -263,13 +281,15 @@ class MainActivity : AppCompatActivity() {
                 "HON CLARISSE MAE T. SORONGON" -> Intent(this, FourthFloorSORONGON::class.java)
                 "FOURTH FLOOR MENS ROOM LEFT" -> Intent(this, FourthFloorMENSROOMLEFT::class.java)
                 "FOURTH FLOOR MENS ROOM RIGHT" -> Intent(this, FourthFloorMENSROOMRIGHT::class.java)
-                "FOURTH FLOOR WOMENS ROOM LEFT" -> Intent(this, FourthFloorWOMENSROOMLEFT::class.java)
-                "FOURTH FLOOR WOMENS ROOM RIGHT" -> Intent(this, FourthFloorWOMENSROOMRIGHT::class.java)
+                "FOURTH FLOOR WOMEN ROOM LEFT" -> Intent(this, FourthFloorWOMENSROOMLEFT::class.java)
+                "FOURTH FLOOR WOMEN ROOM RIGHT" -> Intent(this, FourthFloorWOMENSROOMRIGHT::class.java)
                 "MULTI-ROOM" -> Intent(this, FourthFloorMULTIROOM::class.java)
                 "ONE-STOP SHOP FOR OFWPRAYER ROOM" -> Intent(this,  FourthFloorONESTOPSHOPFOROFWPRAYERROOM::class.java)
                 "SUPPLIES ROOM" -> Intent(this, FourthFloorSUPPLIESROOM::class.java)
                 "VICE MAYORS OFFICE" -> Intent(this, FourthFloorVICEMAYORSOFFICE::class.java)
                 "VICE MAYORS SECRETARY OFFICE" -> Intent(this, FourthFloorVICEMAYORSSECRETARYOFFICE::class.java)
+
+                "FOURTH FLOOR ELEVATOR" -> Intent(this, FourthFloorElevator::class.java)
 
 
 
