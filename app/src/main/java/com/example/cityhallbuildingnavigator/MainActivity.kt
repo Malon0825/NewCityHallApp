@@ -25,14 +25,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         supportActionBar?.hide()
+
         setContentView(R.layout.activity_main)
 
         var selectedValue: String? = null
 
         val searchFloor = findViewById<Button>(R.id.btn_search)
         val shouldDisableButton = selectedValue == ""
+        searchFloor.isEnabled = shouldDisableButton
 
         searchView = findViewById(R.id.searchView1)
 
@@ -125,7 +128,6 @@ class MainActivity : AppCompatActivity() {
             "AUDIO VIDEO ROOM",
             "CITY HEALTH OFFICE",
             "COUNCIL CHAMBER AND MEDIA/AUDIENCE",
-            "COUNCILS SECRETARY OFFICE",
             "HON. HANDEL DEE R. CADELLINO-CUBILO",
             "HON. ANTONIO S. ABING",
             "HON. ELLEN GRACE N. SUBERE-ALBIOS",
