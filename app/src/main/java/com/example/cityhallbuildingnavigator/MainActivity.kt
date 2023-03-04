@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity() {
 
         var selectedValue: String? = null
 
+        val searchFloor = findViewById<Button>(R.id.btn_search)
+        val shouldDisableButton = selectedValue == ""
+
         searchView = findViewById(R.id.searchView1)
 
         listView = findViewById(R.id.listView1)
@@ -182,10 +185,14 @@ class MainActivity : AppCompatActivity() {
             selectedValue = parent.getItemAtPosition(position).toString()
 
             searchView.setQuery(selectedValue, false)
+            searchFloor.isEnabled = !shouldDisableButton
             listView.visibility = View.INVISIBLE
         }
 
-        val searchFloor = findViewById<Button>(R.id.btn_search)
+
+
+
+
         searchFloor.setOnClickListener {
             val intent = when (selectedValue) {
 
@@ -313,7 +320,10 @@ class MainActivity : AppCompatActivity() {
                 else -> Intent(this, MainActivity::class.java)
             }
 
+            selectedValue = ""
             startActivity(intent)
+            searchView.setQuery(selectedValue, false)
+            searchFloor.isEnabled = shouldDisableButton
         }
 
 //        val imageView = findViewById<ImageView>(R.id.img_logo)

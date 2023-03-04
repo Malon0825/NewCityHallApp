@@ -19,13 +19,13 @@ class LoadingScreen : AppCompatActivity() {
         setContentView(R.layout.activity_loading_screen)
 
 
-        val currentProgress = 1000
-        val progress = findViewById<ProgressBar>(R.id.pb_loading)
-        progress.max = 1000
-
-        ObjectAnimator.ofInt(progress, "progress", currentProgress)
-            .setDuration(4500)
-            .start()
+//        val currentProgress = 1000
+//        val progress = findViewById<ProgressBar>(R.id.pb_loading)
+//        progress.max = 1000
+//
+//        ObjectAnimator.ofInt(progress, "progress", currentProgress)
+//            .setDuration(4500)
+//            .start()
 
 
 //        val imageView = findViewById<ImageView>(R.id.image_view)
@@ -40,6 +40,6 @@ class LoadingScreen : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        },5000)
+        },3000)
     }
 }
