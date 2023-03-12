@@ -45,19 +45,21 @@ class MainActivity : AppCompatActivity() {
 
         val names = arrayOf(
             "STORAGE",
-            "CTO STORAGE ROOM",
             "ARCHIVE",
-            "CGSO",
             "PMO STOCK ROOM",
             "CITY DISASTER AND RISK MANAGEMENT",
             "PARKING AREA",
             "SECURITY ROOM LEFT/COOP OFFICE",
             "SECURITY ROOM RIGHT",
-            "GSIS",
             "PUMP ROOM",
             "CANTEEN",
             "BASEMENT ELEVATOR",
             "KITCHEN",
+            "GSIS",
+            "CDRM",
+            "CGSO STORAGE ROOM",
+            "CTO STORAGE ROOM",
+
 
             //Ground Floor
 
@@ -77,6 +79,13 @@ class MainActivity : AppCompatActivity() {
             "GROUND FLOOR WOMEN ROOM RIGHT",
             "CMO BUSSINESS PERMIT AND LISCENCING",
             "LOBBY",
+
+            "CAO",
+            "CPO",
+            "CSU",
+            "CTO",
+            "CDEEO",
+            "CSGO",
 
             //Second Floor
 
@@ -99,6 +108,16 @@ class MainActivity : AppCompatActivity() {
             "SECOND FLOOR ELEVATOR",
             "DILG",
 
+            "CCRO",
+            "CENR",
+            "CCAO",
+            "CCO",
+            "CEO",
+            "CNO",
+            "CSWDO",
+            "CTC",
+            "CVO",
+
             //Third Floor
 
             "ABC HALL",
@@ -120,6 +139,13 @@ class MainActivity : AppCompatActivity() {
             "MIS ROOM-NEGOSYO CENTER",
             "OFFICE OF THE CITY ADMINISTRATION OFFICE",
             "THIRD FLOOR ELEVATOR",
+
+            "AO",
+            "CL",
+            "CMO",
+            "CPD",
+            "CHRMO",
+            "CLO",
 
             //Fourth Floor
 
@@ -154,6 +180,11 @@ class MainActivity : AppCompatActivity() {
             "COUNCIL SECRETARY OFFICE",
             "PRAYER ROOM",
 
+            "CVMO",
+            "CVMSO",
+            "CHO",
+            "CSO",
+            "OSSO",
         )
 
         val adapter: ArrayAdapter<String> = ArrayAdapter(
@@ -188,7 +219,7 @@ class MainActivity : AppCompatActivity() {
 
             searchView.setQuery(selectedValue, false)
             searchFloor.isEnabled = !shouldDisableButton
-            listView.visibility = View.INVISIBLE
+            listView.visibility = View.VISIBLE
         }
 
 
@@ -212,6 +243,9 @@ class MainActivity : AppCompatActivity() {
                 "PUMP ROOM" -> Intent(this, GroundPumpRoom::class.java)
                 "CANTEEN" -> Intent(this, GroundCanteen::class.java)
                 "KITCHEN" -> Intent(this, GroundKitchen::class.java)
+                "CDRM" -> Intent(this, GroundCityDisaster::class.java)
+                "CGSO STORAGE ROOM" -> Intent(this, GroundCGSO::class.java)
+
 
                 "BASEMENT ELEVATOR" -> Intent(this, GroundFloorElevator::class.java)
 
@@ -236,6 +270,13 @@ class MainActivity : AppCompatActivity() {
                 "CMO BUSSINESS PERMIT AND LISCENCING" -> Intent(this, FirstFloorBusinessPermit::class.java)
                 "LOBBY" -> Intent(this, FirstFloorLobby::class.java)
 
+                "CAO" -> Intent(this, FirstFloorCityAssesor::class.java)
+                "CPO" -> Intent(this, FirstFloorCityPopulation::class.java)
+                "CSU" -> Intent(this, FirstFloorCSUInformationDesk::class.java)
+                "CTO" -> Intent(this, FirstFloorCityTreasurers::class.java)
+                "CDEEO" -> Intent(this, FirstFloorEconomicEnterprises::class.java)
+                "CSGO" -> Intent(this,FirstFloorGeneralService::class.java)
+
 //          Second Floor Offices //
 
 
@@ -258,6 +299,17 @@ class MainActivity : AppCompatActivity() {
                 "DILG" -> Intent(this, SecondFloorDILG::class.java)
 
                 "SECOND FLOOR ELEVATOR" -> Intent(this, SecondFloorElevator::class.java)
+
+                "CCRO" -> Intent(this, SecondFloorCivilRegistrar::class.java)
+                "CENR" -> Intent(this, SecondFloorCityEnvironment::class.java)
+                "CCAO" -> Intent(this, SecondFloorCommunityAffairs::class.java)
+                "CCO" -> Intent(this, SecondFloorCooperative::class.java)
+                "CEO" -> Intent(this, SecondFloorEngineering::class.java)
+                "CNO" -> Intent(this, SecondFloorNutrition::class.java)
+                "CSWDO" -> Intent(this, SecondFloorSocialWelfare::class.java)
+                "CTC" -> Intent(this, SecondFloorTourism::class.java)
+                "CVO" -> Intent(this,SecondFloorVeterinary::class.java)
+
 
 //          Third Floor Offices //
 
@@ -282,6 +334,14 @@ class MainActivity : AppCompatActivity() {
                 "OFFICE OF THE CITY ADMINISTRATION OFFICE" -> Intent(this, ThirdFloorCityAdministration::class.java)
 
                 "THIRD FLOOR ELEVATOR" -> Intent(this, ThirdFloorElevator::class.java)
+
+                "AO" -> Intent(this, ThirdFloorAccounting::class.java)
+                "CL" -> Intent(this, ThirdFloorLibrary::class.java)
+                "CMO" -> Intent(this, ThirdFloorMayorOffice::class.java)
+                "CPD" -> Intent(this, ThirdFloorPlanning::class.java)
+                "CHRMO" -> Intent(this, ThirdFloorResourceManagement::class.java)
+                "CLO" -> Intent(this, ThirdFloorLegaOffice::class.java)
+
 
 //          Fourth Floor Offices //
 
@@ -317,6 +377,11 @@ class MainActivity : AppCompatActivity() {
 
                 "FOURTH FLOOR ELEVATOR" -> Intent(this, FourthFloorElevator::class.java)
 
+                "CVMO" -> Intent(this, FourthFloorVICEMAYORSOFFICE::class.java)
+                "CVMSO" -> Intent(this, FourthFloorVICEMAYORSSECRETARYOFFICE::class.java)
+                "CHO" -> Intent(this, FourthFloorCITYHEALTHOFFICE::class.java)
+                "CSO" -> Intent(this, FourthFloorCouncilSec::class.java)
+                "OSSO" -> Intent(this,  FourthFloorONESTOPSHOPFOROFWPRAYERROOM::class.java)
 
 
                 else -> Intent(this, MainActivity::class.java)

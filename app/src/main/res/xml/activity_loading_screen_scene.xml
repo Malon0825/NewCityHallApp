@@ -48,13 +48,13 @@
         <Constraint
             android:id="@+id/finalBG"
             motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            android:scaleX="10"
-            android:scaleY="10" />
+            android:scaleX="1"
+            motion:transitionEasing="cubic(1,0.02,0.8,0.8)" />
         <Constraint
             android:id="@+id/finalBG"
             android:scaleX="0"
@@ -110,10 +110,11 @@
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            android:scaleX="20"
-            android:scaleY="20"
+            android:scaleX="15"
             motion:transitionEasing="cubic(1,0,1,0)"
-            motion:pathMotionArc="none"
-            android:alpha=".8" />
+            android:alpha=".8"
+            motion:layout_constraintVertical_bias="1.0"
+            motion:layout_constraintHorizontal_bias="1.0"
+            android:scaleY="5" />
     </ConstraintSet>
 </MotionScene>
