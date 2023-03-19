@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/cityhall_icon"
+        android:icon="@mipmap/latest_new_cityhall_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/cityhall_icon_round"
+        android:roundIcon="@mipmap/latest_new_cityhall_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CityHallBuildingNavigator"
         tools:targetApi="31">

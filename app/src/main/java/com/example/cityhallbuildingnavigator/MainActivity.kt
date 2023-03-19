@@ -16,6 +16,7 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 
 
 class MainActivity : AppCompatActivity() {
@@ -431,16 +432,13 @@ class MainActivity : AppCompatActivity() {
 
             val lp = WindowManager.LayoutParams()
             lp.copyFrom(myDialog.window?.attributes)
-            lp.width = WindowManager.LayoutParams.MATCH_PARENT
+            lp.width = WindowManager.LayoutParams.WRAP_CONTENT
             lp.height = WindowManager.LayoutParams.MATCH_PARENT
             myDialog.window?.attributes = lp
 
-            myDialog.setCancelable(true)
             myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            myDialog.setCanceledOnTouchOutside(true)
             myDialog.show()
-
-            window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-
 
             val xBtn = dialogBinding.findViewById<ImageButton>(R.id.close_nav_btn)
             xBtn.setOnClickListener{
@@ -473,8 +471,12 @@ class MainActivity : AppCompatActivity() {
                 historyFour.text = historyValueFour
                 historyFive.text = historyValueFive
             }
+            val expandAbout = dialogBinding.findViewById<androidx.cardview.widget.CardView>(R.id.cv_about)
+            expandAbout.setCardBackgroundColor(ContextCompat.getColor(this, R.color.white))
 
             val expandHistory = dialogBinding.findViewById<androidx.cardview.widget.CardView>(R.id.cv_history)
+            expandHistory.setCardBackgroundColor(ContextCompat.getColor(this, R.color.white))
+
             expandHistory.setOnClickListener {
 
                 val expandHisOne = if (history.visibility == View.GONE) View.VISIBLE else View.GONE
