@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CityHallBuildingNavigator"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Navbar"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".FourthFloorPrayer"
             android:exported="false">

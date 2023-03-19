@@ -19,7 +19,7 @@
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:src="@drawable/elevator_womens_room_left"
+        android:src="@drawable/sec_elevator_womens_room_left"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

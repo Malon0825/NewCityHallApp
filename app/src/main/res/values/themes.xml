@@ -12,6 +12,10 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowAnimationStyle">@style/ActivityAnim</item>
+
+        <item name="android:windowFullscreen">true</item>
+
     </style>
 
     <style name="ThemeOverlay.SearchView" parent="">
@@ -19,4 +23,12 @@
         <item name="android:textColorHint">@color/gray</item>
 
     </style>
+    
+    <style name="ActivityAnim" parent="@android:style/Animation.Activity">
+
+
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
+    </style>
+
 </resources>
