@@ -40,7 +40,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065"
+        app:layout_constraintVertical_bias="0.069"
         app:srcCompat="@drawable/lbl_koronadal" />
 
     <androidx.appcompat.widget.SearchView
@@ -56,10 +56,10 @@
         app:iconifiedByDefault="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.019"
+        app:layout_constraintVertical_bias="0.017"
         app:queryHint="Type here..."
         app:searchIcon="@drawable/search_icon">
 

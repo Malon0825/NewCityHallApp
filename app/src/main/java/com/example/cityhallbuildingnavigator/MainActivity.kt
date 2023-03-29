@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity() {
 
             "ABC HALL",
             "ACCOUNTING OFFICE",
-            "CITY AUCTION OFFICE",
+            "CITY AUDITORS OFFICE",
             "BID AND AWARD COMMITTEE",
             "BUDGET HALL",
             "CITY LIBRARY",
@@ -152,7 +152,8 @@ class MainActivity : AppCompatActivity() {
             "THIRD FLOOR MENS ROOM RIGHT",
             "THIRD FLOOR WOMEN ROOM LEFT",
             "THIRD FLOOR WOMEN ROOM RIGHT",
-            "MIS ROOM-NEGOSYO CENTER",
+            "MIS ROOM",
+            "NEGOSYO CENTER",
             "OFFICE OF THE CITY ADMINISTRATION OFFICE",
             "THIRD FLOOR ELEVATOR",
 
@@ -332,7 +333,7 @@ class MainActivity : AppCompatActivity() {
 
                 "ABC HALL" -> Intent(this, ThirdFloorABCHall::class.java)
                 "ACCOUNTING OFFICE" -> Intent(this, ThirdFloorAccounting::class.java)
-                "CITY AUCTION OFFICE" -> Intent(this, ThirdFloorAution::class.java)
+                "CITY AUDITORS OFFICE" -> Intent(this, ThirdFloorAution::class.java)
                 "BID AND AWARD COMMITTEE" -> Intent(this, ThirdFloorAward::class.java)
                 "BUDGET HALL" -> Intent(this, ThirdFloorBudgetHall::class.java)
                 "CITY LIBRARY" -> Intent(this, ThirdFloorLibrary::class.java)
@@ -347,7 +348,8 @@ class MainActivity : AppCompatActivity() {
                 "THIRD FLOOR MENS ROOM RIGHT" -> Intent(this, ThirdFloorMensRoomRight::class.java)
                 "THIRD FLOOR WOMEN ROOM RIGHT" -> Intent(this,  ThirdFloorWomensRoomRight::class.java)
                 "THIRD FLOOR WOMEN ROOM LEFT" -> Intent(this, ThirdFloorWomensRoomLeft::class.java)
-                "MIS ROOM-NEGOSYO CENTER" -> Intent(this, ThirdFloorNegosyo::class.java)
+                "MIS ROOM" -> Intent(this, ThirdFloorMISRoom::class.java)
+                "NEGOSYO CENTER" -> Intent(this, ThirdFloorNegosyo::class.java)
                 "OFFICE OF THE CITY ADMINISTRATION OFFICE" -> Intent(this, ThirdFloorCityAdministration::class.java)
 
                 "THIRD FLOOR ELEVATOR" -> Intent(this, ThirdFloorElevator::class.java)
