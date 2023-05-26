@@ -441,15 +441,30 @@ class MainActivity : AppCompatActivity() {
 
         listView.adapter = adapter
 
+
         searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 searchView.clearFocus()
                 val searchQuery = query?.uppercase()
 
-                if (officeNames.contains(searchQuery)) {
+                // Get the list of items from the adapter.
+                val items = mutableListOf<String>()
+                for (i in 0 until adapter.count) {
+                    val item = adapter.getItem(i)
+                    if (item != null) {
+                        items.add(item)
+                    }
+                }
 
-                    val intent = when (searchQuery) {
+                // Get the first item in the filtered list.
+                val firstItem = items.firstOrNull()
 
+                if (firstItem != null) {
+                    // Set the text of a TextView to the value of the first item.
+
+                    val intent = when (firstItem) {
+
+                        //       Basement Offices //
                         "ARCHIVE" -> Intent(this@MainActivity, GroundArchive::class.java)
                         "STORAGE" -> Intent(this@MainActivity, GroundStorage::class.java)
                         "CTO STORAGE ROOM" -> Intent(this@MainActivity, GroundCTOStorage::class.java)
@@ -469,12 +484,6 @@ class MainActivity : AppCompatActivity() {
 
                         "BASEMENT ELEVATOR" -> Intent(this@MainActivity, GroundFloorElevator::class.java)
 
-                        "PMO STOCK" -> Intent(this@MainActivity, GroundPMO::class.java)
-                        "CITY DISASTER" -> Intent(this@MainActivity, GroundCityDisaster::class.java)
-                        "SECURITY ROOM LEFT" -> Intent(this@MainActivity, GroundSecurityRoom::class.java)
-                        "CGSO STORAGE" -> Intent(this@MainActivity, GroundCGSO::class.java)
-                        "CTO STORAGE" -> Intent(this@MainActivity, GroundCTOStorage::class.java)
-
 
 //          First Floor Offices //
 
@@ -491,7 +500,7 @@ class MainActivity : AppCompatActivity() {
                         "GROUND FLOOR ENTRANCE" -> Intent(this@MainActivity, FirstFloorEntrance::class.java)
                         "GROUND FLOOR EXIT" -> Intent(this@MainActivity, FirstFloorExit::class.java)
                         "CMO FRANCHISING UNIT" -> Intent(this@MainActivity, FirstFloorFranchisingUnit::class.java)
-                        "GENERAL SERVICES" -> Intent(this@MainActivity,FirstFloorGeneralService::class.java)
+                        "GENERAL SERVICES" -> Intent(this@MainActivity, FirstFloorGeneralService::class.java)
                         "CSU/INFORMATION DESK" -> Intent(this@MainActivity, FirstFloorCSUInformationDesk::class.java)
                         "CMO BUSSINESS PERMIT AND LISCENCING" -> Intent(this@MainActivity, FirstFloorBusinessPermit::class.java)
                         "LOBBY" -> Intent(this@MainActivity, FirstFloorLobby::class.java)
@@ -501,15 +510,7 @@ class MainActivity : AppCompatActivity() {
                         "CSU" -> Intent(this@MainActivity, FirstFloorCSUInformationDesk::class.java)
                         "CTO" -> Intent(this@MainActivity, FirstFloorCityTreasurers::class.java)
                         "CDEEO" -> Intent(this@MainActivity, FirstFloorEconomicEnterprises::class.java)
-                        "CSGO" -> Intent(this@MainActivity,FirstFloorGeneralService::class.java)
-
-                        "CITY ASSESSOR" -> Intent(this@MainActivity, FirstFloorCityAssesor::class.java)
-                        "CITY POPULATION" -> Intent(this@MainActivity, FirstFloorCityPopulation::class.java)
-                        "CITY TREASURERS" -> Intent(this@MainActivity, FirstFloorCityTreasurers::class.java)
-                        "CONSTRUCTION" -> Intent(this@MainActivity, FirstFloorConstructionPermit::class.java)
-                        "CMO FRANCHISING" -> Intent(this@MainActivity, FirstFloorFranchisingUnit::class.java)
-                        "CSU DESK" -> Intent(this@MainActivity, FirstFloorCSUInformationDesk::class.java)
-                        "CMO BUSSINESS" -> Intent(this@MainActivity, FirstFloorFranchisingUnit::class.java)
+                        "CSGO" -> Intent(this@MainActivity, FirstFloorGeneralService::class.java)
 
 //          Second Floor Offices //
 
@@ -524,12 +525,13 @@ class MainActivity : AppCompatActivity() {
                         "CITY NUTRITION OFFICE"-> Intent(this@MainActivity, SecondFloorNutrition::class.java)
                         "CITY SOCIAL WELFARE AND DEVELOPMENT OFFICE" -> Intent(this@MainActivity, SecondFloorSocialWelfare::class.java)
                         "CITY TOURISM AND CULTURAL AFFAIRS" -> Intent(this@MainActivity, SecondFloorTourism::class.java)
-                        "CITY VETERINARY OFFICE"-> Intent(this@MainActivity,SecondFloorVeterinary::class.java)
+                        "CITY VETERINARY OFFICE"-> Intent(this@MainActivity, SecondFloorVeterinary::class.java)
                         "SECOND FLOOR MENS ROOM LEFT" -> Intent(this@MainActivity, SecondFloorMenRoomLeft::class.java)
                         "SECOND FLOOR MENS ROOM RIGHT" -> Intent(this@MainActivity, SecondFloorMenRoomRight::class.java)
                         "SECOND FLOOR WOMEN ROOM LEFT" -> Intent(this@MainActivity, SecondFloorCRLeft::class.java)
                         "SECOND FLOOR WOMEN ROOM RIGHT" -> Intent(this@MainActivity, SecondFloorCRRight::class.java)
-                        "OFFICE OF THE CITY SOCIAL WELFARE AND DEVELOPMENT OFFICER" -> Intent(this@MainActivity,SecondFloorOfficeCSWD::class.java)
+                        "OFFICE OF THE CITY SOCIAL WELFARE AND DEVELOPMENT OFFICER" -> Intent(this@MainActivity,
+                            SecondFloorOfficeCSWD::class.java)
                         "DILG" -> Intent(this@MainActivity, SecondFloorDILG::class.java)
 
                         "SECOND FLOOR ELEVATOR" -> Intent(this@MainActivity, SecondFloorElevator::class.java)
@@ -542,20 +544,7 @@ class MainActivity : AppCompatActivity() {
                         "CNO" -> Intent(this@MainActivity, SecondFloorNutrition::class.java)
                         "CSWDO" -> Intent(this@MainActivity, SecondFloorSocialWelfare::class.java)
                         "CTC" -> Intent(this@MainActivity, SecondFloorTourism::class.java)
-                        "CVO" -> Intent(this@MainActivity,SecondFloorVeterinary::class.java)
-
-                        "CITY CIVIL" -> Intent(this@MainActivity, SecondFloorCivilRegistrar::class.java)
-                        "CITY ENVIRONMENT" -> Intent(this@MainActivity, SecondFloorCityEnvironment::class.java)
-                        "CITY AGRICULTURE" -> Intent(this@MainActivity, SecondFloorCityArgiculture::class.java)
-                        "CITY ARCHITECT" -> Intent(this@MainActivity, SecondFloorCityArchitect::class.java)
-                        "CITY COMMUNITY" -> Intent(this@MainActivity, SecondFloorCommunityAffairs::class.java)
-                        "CITY COOPERATIVES" -> Intent(this@MainActivity, SecondFloorCooperative::class.java)
-                        "CITY ENGINEERING" -> Intent(this@MainActivity, SecondFloorEngineering::class.java)
-                        "CITY NUTRITION" -> Intent(this@MainActivity, SecondFloorNutrition::class.java)
-                        "CITY SOCIAL" -> Intent(this@MainActivity, SecondFloorSocialWelfare::class.java)
-                        "CITY TOURISM" -> Intent(this@MainActivity, SecondFloorTourism::class.java)
-                        "CITY VETERINARY" -> Intent(this@MainActivity,SecondFloorVeterinary::class.java)
-                        "CITY SOCIAL WELFARE" -> Intent(this@MainActivity, SecondFloorSocialWelfare::class.java)
+                        "CVO" -> Intent(this@MainActivity, SecondFloorVeterinary::class.java)
 
 
 //          Third Floor Offices //
@@ -571,7 +560,7 @@ class MainActivity : AppCompatActivity() {
                         "CITY HUMAN RESOURCE MANAGEMENT OFFICE" -> Intent(this@MainActivity, ThirdFloorResourceManagement::class.java)
                         "CITY LEGAL OFFICE" -> Intent(this@MainActivity, ThirdFloorLegaOffice::class.java)
                         "MAYOR'S OFFICE" -> Intent(this@MainActivity, ThirdFloorMayorOffice::class.java)
-                        "MAYOR'S LOUNGE AND CONFERENCE ROOM" -> Intent(this@MainActivity,ThirdFloorMayorLounge::class.java)
+                        "MAYOR'S LOUNGE AND CONFERENCE ROOM" -> Intent(this@MainActivity, ThirdFloorMayorLounge::class.java)
                         "MAYOR'S STAFF OFFICE" -> Intent(this@MainActivity, ThirdFloorMayorStaff::class.java)
                         "THIRD FLOOR MENS ROOM LEFT" -> Intent(this@MainActivity, ThirdFloorMensRoomLeft::class.java)
                         "THIRD FLOOR MENS ROOM RIGHT" -> Intent(this@MainActivity, ThirdFloorMensRoomRight::class.java)
@@ -590,15 +579,6 @@ class MainActivity : AppCompatActivity() {
                         "CHRMO" -> Intent(this@MainActivity, ThirdFloorResourceManagement::class.java)
                         "CLO" -> Intent(this@MainActivity, ThirdFloorLegaOffice::class.java)
 
-                        "CITY AUDITORS" -> Intent(this@MainActivity, ThirdFloorAution::class.java)
-                        "BID AND AWARD" -> Intent(this@MainActivity, ThirdFloorAward::class.java)
-                        "CITY PLANING" -> Intent(this@MainActivity, ThirdFloorPlanning::class.java)
-                        "CITY HUMAN" -> Intent(this@MainActivity, ThirdFloorResourceManagement::class.java)
-                        "CITY LEGAL" -> Intent(this@MainActivity, ThirdFloorLegaOffice::class.java)
-                        "MAYOR LOUNGE" -> Intent(this@MainActivity,ThirdFloorMayorLounge::class.java)
-                        "MAYOR STAFF" -> Intent(this@MainActivity, ThirdFloorMayorStaff::class.java)
-                        "CITY ADMINISTRATION" -> Intent(this@MainActivity, ThirdFloorCityAdministration::class.java)
-
 
 //          Fourth Floor Offices //
 
@@ -612,7 +592,7 @@ class MainActivity : AppCompatActivity() {
                         "HON. ELLEN GRACE N. SUBERE-ALBIOS" -> Intent(this@MainActivity, FourthFloorALBIOS::class.java)
                         "HON ESTER M. CATORCE" -> Intent(this@MainActivity, FourthFloorCATORCE::class.java)
                         "HON. FRANCIS ROSS DIDELES" -> Intent(this@MainActivity, FourthFloorDIDELES::class.java)
-                        "HON. BERNARDO B. HINAY" -> Intent(this@MainActivity,FourthFloorHINAY::class.java)
+                        "HON. BERNARDO B. HINAY" -> Intent(this@MainActivity, FourthFloorHINAY::class.java)
                         "HON. CHARENE KRISTELLE C. JUMILIA" -> Intent(this@MainActivity, FourthFloorJUMILIA::class.java)
                         "HON. MARK C. LAPIDEZ" -> Intent(this@MainActivity, FourthFloorLAPIDEZ::class.java)
                         "HON. ANNABELLE G. PINGOY" -> Intent(this@MainActivity, FourthFloorPINGOY::class.java)
@@ -640,56 +620,20 @@ class MainActivity : AppCompatActivity() {
                         "CSO" -> Intent(this@MainActivity, FourthFloorCouncilSec::class.java)
                         "OSSO" -> Intent(this@MainActivity,  FourthFloorONESTOPSHOPFOROFWPRAYERROOM::class.java)
 
-
-                        "VICE MAYOR STAFF" -> Intent(this@MainActivity, FourthFloorVICEMAYORSOFFICE::class.java)
-                        "AUDIO ROOM" -> Intent(this@MainActivity, FourthFloorAUDIOVIDEOROOM::class.java)
-                        "VIDEO ROOM" -> Intent(this@MainActivity, FourthFloorAUDIOVIDEOROOM::class.java)
-                        "COUNCIL CHAMBER" -> Intent(this@MainActivity, FourthFloorCOUNCILCHAMBERANDMEDIAAUDIENCE::class.java)
-
-                        "HANDEL" -> Intent(this@MainActivity, FourthFloorCADELLINOCUBILO::class.java)
-                        "ANTONIO" -> Intent(this@MainActivity, FourthFloorABING::class.java)
-                        "ELLEN GRACE" -> Intent(this@MainActivity, FourthFloorALBIOS::class.java)
-                        "ESTER" -> Intent(this@MainActivity, FourthFloorCATORCE::class.java)
-                        "FRANCIS" -> Intent(this@MainActivity, FourthFloorDIDELES::class.java)
-                        "BERNARDO" -> Intent(this@MainActivity, FourthFloorJUMILIA::class.java)
-                        "CHARENE"-> Intent(this@MainActivity, FourthFloorJUMILIA::class.java)
-                        "MARK" -> Intent(this@MainActivity, FourthFloorLAPIDEZ::class.java)
-                        "ANNABELLE" -> Intent(this@MainActivity, FourthFloorPINGOY::class.java)
-                        "GREGORIO" -> Intent(this@MainActivity,  FourthFloorPRESGA::class.java)
-                        "JOHN REY" -> Intent(this@MainActivity, FourthFloorRODRIGUEZ::class.java)
-                        "SHARMAIGNE" -> Intent(this@MainActivity, FourthFloorSALA::class.java)
-                        "CLARISSE" -> Intent(this@MainActivity, FourthFloorSORONGON::class.java)
-
-                        "CADELLINO" -> Intent(this@MainActivity, FourthFloorCADELLINOCUBILO::class.java)
-                        "ABING" -> Intent(this@MainActivity, FourthFloorABING::class.java)
-                        "SUBERE" -> Intent(this@MainActivity, FourthFloorALBIOS::class.java)
-                        "CATORCE" -> Intent(this@MainActivity, FourthFloorCATORCE::class.java)
-                        "DIDELES" -> Intent(this@MainActivity, FourthFloorDIDELES::class.java)
-                        "HINAY" -> Intent(this@MainActivity, FourthFloorJUMILIA::class.java)
-                        "JUMILIA" -> Intent(this@MainActivity, FourthFloorJUMILIA::class.java)
-                        "LAPIDEZ" -> Intent(this@MainActivity, FourthFloorLAPIDEZ::class.java)
-                        "PINGOY" -> Intent(this@MainActivity, FourthFloorPINGOY::class.java)
-                        "PRESGA" -> Intent(this@MainActivity,  FourthFloorPRESGA::class.java)
-                        "RODRIGUEZ" -> Intent(this@MainActivity, FourthFloorRODRIGUEZ::class.java)
-                        "SALA" -> Intent(this@MainActivity, FourthFloorSALA::class.java)
-                        "SORONGON" -> Intent(this@MainActivity, FourthFloorSORONGON::class.java)
-
-                        "VICE MAYOR" -> Intent(this@MainActivity, FourthFloorVICEMAYORSOFFICE::class.java)
-                        "VICE MAYOR SECRETARY" -> Intent(this@MainActivity, FourthFloorVICEMAYORSSECRETARYOFFICE::class.java)
-                        "COUNCIL SECRETARY" -> Intent(this@MainActivity, FourthFloorVICEMAYORSOFFICE::class.java)
-
-                        else -> null
-                    }
+                        else -> null}
                     if (intent != null) {
                         startActivity(intent)
                         android.os.Handler().postDelayed({
                             selectedValue = ""
                             searchView.setQuery(selectedValue, false)
                         },2000)
-                    }
+                    }else { Toast.makeText(applicationContext, "Office not found", Toast.LENGTH_LONG).show() }
+
                 } else {
-                    Toast.makeText(applicationContext, "Item not found", Toast.LENGTH_LONG).show()
+                    // Handle the case where there are no items in the filtered list.
+                    Toast.makeText(this@MainActivity, "Error: No such office or department", Toast.LENGTH_LONG).show()
                 }
+
                 toggleListViewVisibility(query)
                 return false
             }
@@ -707,14 +651,7 @@ class MainActivity : AppCompatActivity() {
 
             searchView.setQuery(selectedValue, false)
 
-//            historyValue = selectedValue.toString()
-//
-//
-//            historyValueFive = historyValueFour
-//            historyValueFour = historyValueThree
-//            historyValueThree = historyValueTwo
-//            historyValueTwo = historyValueOne
-//            historyValueOne = historyValue
+
 
             val intent = when (selectedValue) {
 
