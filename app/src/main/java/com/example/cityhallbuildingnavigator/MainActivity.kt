@@ -850,5 +850,38 @@ class MainActivity : AppCompatActivity() {
             myDialog.show()
         }
 
+        val navbar =findViewById<ImageButton>(R.id.home_about_us)
+
+        navbar.setOnClickListener{
+
+            val dialogBinding = layoutInflater.inflate(R.layout.activity_navbar, null)
+
+            val myDialog = Dialog(this)
+            myDialog.setContentView(dialogBinding)
+
+            val window = myDialog.window
+            window?.setGravity(Gravity.START)
+            window?.setDimAmount(0.5F) // Set dim amount to 0 for full transparency
+            val layoutParams = window?.attributes
+            layoutParams?.x = -100 // Set x offset to position the dialog
+            layoutParams?.y = 100 // Set y offset to position the dialog
+            window?.attributes = layoutParams
+
+            val lp = WindowManager.LayoutParams()
+            lp.copyFrom(myDialog.window?.attributes)
+            lp.width = WindowManager.LayoutParams.WRAP_CONTENT
+            lp.height = WindowManager.LayoutParams.MATCH_PARENT
+            myDialog.window?.attributes = lp
+
+            myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            myDialog.setCanceledOnTouchOutside(true)
+            myDialog.show()
+
+            val xBtn = dialogBinding.findViewById<ImageButton>(R.id.about_us_btn)
+            xBtn.setOnClickListener{
+                myDialog.dismiss()
+            }
+        }
+
     }
 }
