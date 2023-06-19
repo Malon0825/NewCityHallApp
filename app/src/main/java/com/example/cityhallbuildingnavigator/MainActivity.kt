@@ -58,7 +58,6 @@ class MainActivity : AppCompatActivity() {
         searchView = findViewById(R.id.searchView1)
 
         listView = findViewById(R.id.listView1)
-        imageBtn = findViewById(R.id.imageView100)
 
         listView.visibility = View.INVISIBLE
 
